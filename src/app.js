@@ -1,9 +1,17 @@
 import React from 'react'
+import ReactDom from 'react-dom'
+require('./styles/main.css')
+require('react-bootstrap')
+import InputAwesome from './submit.js'
+
+
 require('./styles/main.css')
 const Hello  = React.createClass({
   render (){
-    return <div>Hello, {this.props.name}</div>
+    return <div>
+      <InputAwesome/>
+    </div>
   }
 })
 
-React.render(<Hello name="jdawg"/>, document.body)
+ReactDom.render(<Hello/>, document.body)
