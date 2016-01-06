@@ -1,17 +1,18 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+require ('bootstrap/dist/css/bootstrap.css')
 require('./styles/main.css')
-require('react-bootstrap')
 import InputAwesome from './submit.js'
 
 
 require('./styles/main.css')
-const Hello  = React.createClass({
+const App  = React.createClass({
   render (){
     return <div>
       <InputAwesome/>
+      <InputJar/>
     </div>
   }
 })
 
-ReactDom.render(<Hello/>, document.body)
+ReactDom.render(<App/>, document.body)

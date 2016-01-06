@@ -1,42 +1,50 @@
 import React from 'react'
-require ('bootstrap/dist/css/bootstrap.css')
 import {Input} from 'react-bootstrap';
 require('./styles/main.css')
+import Firebase from 'firebase'
 const InputAwesome = React.createClass({
+  componentWillMount() {
+    this.firebaseRef = new Firebase("https://awesomejar.firebaseio.com/items");
+    console.log('firebase', this.firebaseRef)
+    console.log('component mounted')
+  },
+
+
   getInitialState() {
     return {
       value: ''
     };
   },
-  validationState() {
-    let length = this.state.value.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
-    else if (length > 0) return 'error';
-  },
-
   handleChange() {
-    // This could also be done using ReactLink:
-    // http://facebook.github.io/react/docs/two-way-binding-helpers.html
     this.setState({
       value: this.refs.input.getValue()
     });
   },
+  handleSubmit(e) {
+    console.log(this.refs.input.getValue())
+    e.preventDefault();
+    this.firebaseRef.push({
+      text: this.refs.input.getValue()
+    });
+    this.setState({value: ""});
+    console.log(this.state)
+  },
 
   render() {
     return (
+      <div>
       <Input
         type="text"
         value={this.state.value}
         placeholder="Enter text"
-        label="Working example with validation"
-        help="Validation is based on string length."
-        bsStyle={this.validationState()}
         hasFeedback
         ref="input"
         groupClassName="group-class"
         labelClassName="label-class"
-        onChange={this.handleChange} />
+        onChange={this.handleChange}
+       ></Input>
+          <button type="button" className="btn btn-primary btn-block" onClick={this.handleSubmit}>Submit</button>
+        </div>
     );
   }
 });
