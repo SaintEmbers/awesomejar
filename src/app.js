@@ -3,14 +3,14 @@ import ReactDom from 'react-dom'
 require ('bootstrap/dist/css/bootstrap.css')
 require('./styles/main.css')
 import InputAwesome from './submit.js'
-
+import Jar from './components/eventsjar.js'
 
 require('./styles/main.css')
 const App  = React.createClass({
   render (){
     return <div>
       <InputAwesome/>
-      <InputJar/>
+      <Jar/>
     </div>
   }
 })
