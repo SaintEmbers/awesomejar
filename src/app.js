@@ -4,11 +4,13 @@ require ('bootstrap/dist/css/bootstrap.css')
 require('./styles/main.css')
 import InputAwesome from './submit.js'
 import Jar from './components/eventsjar.js'
+import InputFocus from './components/focus.js'
 
 require('./styles/main.css')
 const App  = React.createClass({
   render (){
     return <div>
+      <InputFocus/>
       <InputAwesome/>
       <Jar/>
     </div>

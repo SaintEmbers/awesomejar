@@ -1,25 +1,27 @@
 import React from 'react'
 // require('./styles/main.css')
-import Firebase from 'firebase'
 import ReactFireMixin from 'reactfire'
+import Firebase from 'firebase'
 
-const Jar = React.createClass({
+var Jar = React.createClass({
   mixins: [ReactFireMixin],
 
   componentWillMount: function() {
     var ref = new Firebase("https://awesomejar.firebaseio.com/items")
     this.bindAsArray(ref, "items")
-    console.log(this)
   },
 
   render() {
+    // console.log(this.state)
+    var items = this.state.items.map((item) => {
+      return <li>{item.text}</li>
+    })
     return (
       <div>
-        <p>jar</p>
+        <ul>{items}</ul>
       </div>
     );
   }
 })
-
 
 export default Jar

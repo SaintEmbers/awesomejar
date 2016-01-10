@@ -1,10 +1,10 @@
 import React from 'react'
 import {Input} from 'react-bootstrap';
-require('./styles/main.css')
+// require('./styles/main.css')
 import Firebase from 'firebase'
-const InputAwesome = React.createClass({
+const InputFocus = React.createClass({
   componentWillMount() {
-    this.firebaseRef = new Firebase("https://awesomejar.firebaseio.com/items");
+    this.firebaseRef = new Firebase("https://awesomejar.firebaseio.com/focus");
     console.log('firebase', this.firebaseRef)
     console.log('component mounted')
   },
@@ -33,11 +33,11 @@ const InputAwesome = React.createClass({
   render() {
     return (
       <div>
-      <h1>Drop something awesome in the awesome jar</h1>
+      <h1>What is your relationship focus today</h1>
       <Input
         type="text"
         value={this.state.value}
-        placeholder="Enter something awesome"
+        placeholder="What will have the biggest impact today?"
         hasFeedback
         ref="input"
         groupClassName="group-class"
@@ -49,6 +49,4 @@ const InputAwesome = React.createClass({
     );
   }
 });
-export default InputAwesome
-
-
+export default InputFocus
