@@ -5,6 +5,7 @@ require('./styles/main.css')
 import InputAwesome from './submit.js'
 import Jar from './components/eventsjar.js'
 import InputFocus from './components/focus.js'
+import Goals from './components/goals.js'
 
 require('./styles/main.css')
 const App  = React.createClass({
@@ -13,6 +14,7 @@ const App  = React.createClass({
       <InputFocus/>
       <InputAwesome/>
       <Jar/>
+      <Goals/>
     </div>
   }
 })

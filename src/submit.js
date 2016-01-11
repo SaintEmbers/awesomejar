@@ -21,10 +21,11 @@ const InputAwesome = React.createClass({
     });
   },
   handleSubmit(e) {
-    console.log(this.refs.input.getValue())
     e.preventDefault();
     this.firebaseRef.push({
-      text: this.refs.input.getValue()
+      text: this.refs.input.getValue(),
+      date: new Date(),
+      user: "Jason"
     });
     this.setState({value: ""});
     console.log(this.state)
@@ -33,7 +34,7 @@ const InputAwesome = React.createClass({
   render() {
     return (
       <div>
-      <h1>Drop something awesome in the awesome jar</h1>
+      <h1>Good things happen</h1>
       <Input
         type="text"
         value={this.state.value}

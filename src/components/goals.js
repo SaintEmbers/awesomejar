@@ -2,11 +2,10 @@ import React from 'react'
 import {Input} from 'react-bootstrap';
 // require('./styles/main.css')
 import Firebase from 'firebase'
-const InputFocus = React.createClass({
+const Goals = React.createClass({
   componentWillMount() {
-    this.firebaseRef = new Firebase("https://awesomejar.firebaseio.com/focus");
+    this.firebaseRef = new Firebase("https://awesomejar.firebaseio.com/goals");
     console.log('firebase', this.firebaseRef)
-    console.log('component mounted')
   },
 
 
@@ -35,11 +34,11 @@ const InputFocus = React.createClass({
   render() {
     return (
       <div>
-      <h1>What is your relationship focus today</h1>
+      <h1>Goals</h1>
       <Input
         type="text"
         value={this.state.value}
-        placeholder="What will have the biggest impact today?"
+        placeholder="What are your goals?"
         hasFeedback
         ref="input"
         groupClassName="group-class"
@@ -51,4 +50,5 @@ const InputFocus = React.createClass({
     );
   }
 });
-export default InputFocus
+export default Goals
+
