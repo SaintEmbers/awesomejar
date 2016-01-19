@@ -12,11 +12,15 @@ var Focus = React.createClass({
   },
 
   render() {
-    var focus = this.state.focus[this.state.focus.length - 1]
-    console.log('focus', focus)
+    // console.log('focus', this.state.focus[0])
+    var focus = this.state.focus;
+    var mainFocus = focus[focus.length - 1];
+
+    // console.log('focus2', focus)
     return (
       <div>
-        <h1>{focus.text}</h1>
+        <h1>{mainFocus.user}:</h1>
+        <h2>{mainFocus.text}</h2>
       </div>
     );
   }
