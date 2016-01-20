@@ -34,9 +34,10 @@ const InputAwesome = React.createClass({
   render() {
     return (
       <div>
-      <h1>Good things happen</h1>
+      <h1 className="motivation">Remember: Good things happen</h1>
       <Input
-        type="text"
+        className="jar-text"
+        type="textarea"
         value={this.state.value}
         placeholder="Enter something awesome"
         hasFeedback
@@ -45,7 +46,7 @@ const InputAwesome = React.createClass({
         labelClassName="label-class"
         onChange={this.handleChange}
        ></Input>
-          <button type="button" className="btn btn-primary btn-block" onClick={this.handleSubmit}>Submit</button>
+          <button type="button" className="btn btn-primary btn-block jar-btn" onClick={this.handleSubmit}>Submit</button>
         </div>
     );
   }

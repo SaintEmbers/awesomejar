@@ -1,3 +1,19 @@
 body{
   background: white;
+  text-align: center;
+}
+.group-class{
+  float: none;
+  margin: 0 auto;
+}
+.jar-text{
+  width: 33% !important;
+  margin: 0 auto;
+}
+.jar-btn{
+  width:11% !important;
+  margin: 0 auto;
+}
+.motivation{
+  margin: 20px;
 }

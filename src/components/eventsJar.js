@@ -17,8 +17,8 @@ var Jar = React.createClass({
       return <li>{item.text}</li>
     })
     return (
-      <div>
-        <ul>{items}</ul>
+      <div className="jar-info">
+        <h2>{items.length} awesome things have happened</h2>
       </div>
     );
   }
