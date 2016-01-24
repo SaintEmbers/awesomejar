@@ -4,7 +4,7 @@ var jsdom = require('jsdom')
 
 // setup the simplest document possible
 var doc = jsdom.jsdom('<!doctype html><html><body></body></html>')
-
+console.log('in dom.js')
 // get the window object out of the document
 var win = doc.defaultView
 
@@ -22,7 +22,6 @@ function propagateToGlobal (window) {
   for (let key in window) {
     if (!window.hasOwnProperty(key)) continue
     if (key in global) continue
-
     global[key] = window[key]
   }
 }

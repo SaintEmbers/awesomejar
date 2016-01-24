@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "expect": "^1.13.0",
+    "ignore-styles": "^1.2.0",
     "jsdom": "^7.2.2",
     "karma": "^0.13.15",
     "karma-chrome-launcher": "^0.2.2",
