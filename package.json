@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "expect": "^1.13.0",
+    "jsdom": "^7.2.2",
     "karma": "^0.13.15",
     "karma-chrome-launcher": "^0.2.2",
     "karma-cli": "0.1.1",
@@ -60,6 +61,7 @@
   "private": true,
   "scripts": {
     "build": "webpack",
+    "test": "mocha --opts ./test/mocha.opts --compilers js:babel/register --recursive test/**/*.spec.js",
     "deploy": "surge -p public -d labelr.surge.sh",
     "start": "webpack-dev-server",
     "yolo": "git add --all && git commit -am \"$(date)\" && npm version minor && git push origin master --tags && npm run build && npm run deploy"
