@@ -1,19 +1,17 @@
 import React from 'react'
-import ReactDom from 'react-dom'
-require ('bootstrap/dist/css/bootstrap.min.css')
-require('./styles/main.css')
-// import InputAwesome from './submit.js'
-// import Jar from './components/eventsjar.js'
+import { render }from 'react-dom'
+import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
 
-require('./styles/main.css')
-var App  = React.createClass({
+import Root from './root'
+import Add from './Add'
+import Modal from './components/modal'
+console.log('routes')
 
-  render (){
-    return <div>
-    wassup
-
-    </div>
-  }
-})
-
-ReactDom.render(<App/>, document.body)
+render((
+  <Router history={browserHistory}>
+    <Route path='/' component={ Root }>
+      <IndexRoute component={ Add } />
+      <Route path='modal' component={ Modal } />
+    </Route>
+  </Router>
+), document.body)
